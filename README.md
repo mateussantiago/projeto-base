@@ -1,1 +1,1 @@
-projeto-base
+projeto-base-thymeleaf

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      th:fragment="page">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="icon" type="image/png" th:href="@{/resources/img/logo-sinfo-barra.png}"/>
+    <title>Projeto Base</title>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+    <link rel="stylesheet" type="text/css" th:href="@{/resources/css/bootstrap-submenu.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/resources/vendor/fontawesome/css/font-awesome.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/resources/vendor/animate.css/animate.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/resources/vendor/toastr/toastr.min.css}"/>
+    <link rel="stylesheet" type="text/css"
+          th:href="@{/resources/vendor/bootstrap3-dialog/dist/css/bootstrap-dialog.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/resources/css/sinfo-theme-academic.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/resources/css/intellectus.css}"/>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script type="text/javascript" th:src="@{/resources/vendor/jquery/dist/jquery.min.js}"></script>
+
+</head>
+
+<body class="no-footer">
+
+<div id="site-wrapper">
+    <div class="navbar navbar-static-top sf-navbar">
+
+        <div class="sf-navbar-header">
+
+            <div class="navbar-header">
+                <h1 class="sr-only">Projeto Base</h1>
+
+                <a class="navbar-brand" href="${ request.contextPath }/sigaa">
+                    <img th:src="@{/resources/img/logotipo/logo-sigaa-navbar.png}" alt="Logo do sistema"
+                         title="Logo do sistema">
+                </a>
+            </div>
+
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Expandir/Retrair menu do usuário</span>
+                <span class="icon-bar top-bar"></span>
+                <span class="icon-bar middle-bar"></span>
+                <span class="icon-bar bottom-bar"></span>
+            </button>
+
+            <div id="sf-navbar-collapse" role="navigation">
+
+                <ul class="nav navbar-nav navbar-right sf-nav-tools">
+                    <li class="dropdown sf-dropdown-user">
+                        <a href="#" class="dropdown-toggle"
+                           data-toggle="dropdown" role="button" aria-expanded="false">
+                            <span> </span>
+                            <i class="fa fa-angle-down"></i>
+                        </a>
+                        <ul role="menu" class="dropdown-menu dropdown-menu-right" data-dropdown-in="flipInX"
+                            data-dropdown-out="flipOutX">
+                            <li class="user-info">
+                                <span class="user-name ellipis">
+
+                                </span>
+                            </li>
+                            <li><a th:href="@{/j_spring_cas_security_logout}">Sair</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div> <!-- /#sf-navbar-collapse  -->
+
+        </div>
+
+        <div id="main-navbar" class="sf-navbar-menu navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li> <a th:href="@{/}">Home</a> </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <section th:include="this :: content"/>
+        </div>
+    </div>
+
+</div>
+
+<!-- rodape -->
+<footer id="site-rodape">
+    <div class="container">
+        <div class="logo">
+            <a href="http://info.ufrn.br">
+                <img th:src="@{/resources/img/logotipo-sinfo.png}" alt="Superintendência de Informática">
+            </a>
+        </div>
+        <div class="detalhes-sistema">
+            <span class="detalhe-item copyright"><th:block th:text="${'Copyright © 2006-' + #calendars.format(#calendars.createNow(), 'yyyy')}"></th:block></span>
+            <span class="detalhe-item sinfo"> Superintendência de Informática
+      </span>
+            <span class="detalhe-item instituicao-nome">Universidade Federal do Rio Grande do Norte</span>
+            <span class="detalhe-item suporte">(84) 3215-3148</span>
+        </div>
+    </div> <!-- /container -->
+</footer>
+
+<script type="text/javascript" th:src="@{/resources/vendor/underscore/underscore-min.js}"></script>
+<script type="text/javascript" th:src="@{/resources/vendor/moment/moment.js}"></script>
+<script type="text/javascript" th:src="@{/resources/vendor/moment/locale/pt-br.js}"></script>
+<script type="text/javascript" th:src="@{/resources/vendor/toastr/toastr.min.js}"></script>
+<script type="text/javascript" th:src="@{/resources/vendor/jquery-mask-plugin/dist/jquery.mask.min.js}"></script>
+<script type="text/javascript" th:src="@{/resources/vendor/typeahead.js/dist/typeahead.bundle.min.js}"></script>
+<script type="text/javascript" th:src="@{/resources/vendor/jquery-validation/dist/jquery.validate.min.js}"></script>
+<script type="text/javascript" th:src="@{/resources/vendor/jquery-validation/dist/additional-methods.min.js}"></script>
+<script type="text/javascript" th:src="@{/resources/vendor/jquery-validation/src/localization/messages_pt_BR.js}"></script>
+
+<script type="text/javascript" th:src="@{/resources/js/jquery-validation.config.js}"></script>
+<script type="text/javascript" th:src="@{/resources/js/jquery.mask.config.js}"></script>
+<script type="text/javascript" th:src="@{/resources/js/toastr.config.js}"></script>
+<script type="text/javascript" th:src="@{/resources/js/sinfo-alerts.js}"></script>
+<script type="text/javascript" th:src="@{/resources/js/main.js}"></script>
+<script type="text/javascript" th:src="@{/resources/js/jquery.scrolling-smooth.js}"></script>
+<script type="text/javascript" th:src="@{/resources/js/sinfo-aside-menu.js}"></script>
+<script type="text/javascript" th:src="@{/resources/js/bootstrap-submenu.min.js}"></script>
+<script type="text/javascript" th:src="@{/resources/js/bootstrap-dropdown-effects.js}"></script>
+<script type="text/javascript" th:src="@{/resources/js/highcharts.js}"></script>
+<script type="text/javascript" th:src="@{/resources/js/jquery-ui.js}"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script type="text/javascript" th:src="@{/resources/vendor/bootstrap-sass/assets/javascripts/bootstrap.min.js}"></script>
+<script type="text/javascript" th:src="@{/resources/vendor/bootstrap3-dialog/dist/js/bootstrap-dialog.min.js}"></script>
+<script type="text/javascript" th:src="@{/resources/vendor/bootstrap-validator/dist/validator.min.js}"></script>
+
+<script type="text/javascript" th:src="@{/resources/vendor/datatable/jquery.dataTables.min.js}"></script>
+
+<script type="text/javascript" th:src="@{/resources/vendor/datatable/tableexport/tableExport.js}"></script>
+<script type="text/javascript" th:src="@{/resources/vendor/datatable/tableexport/jquery.base64.js}"></script>
+<script type="text/javascript" th:src="@{/resources/vendor/datatable/tableexport/html2canvas.js}"></script>
+
+<script type="text/javascript" th:src="@{/resources/vendor/datatable/tableexport/jspdf/jspdf.js}"></script>
+<script type="text/javascript" th:src="@{/resources/vendor/datatable/tableexport/jspdf/libs/sprintf.js}"></script>
+<script type="text/javascript" th:src="@{/resources/vendor/datatable/tableexport/jspdf/libs/base64.js}"></script>
+
+<script type="text/javascript" th:src="@{/resources/vendor/datatable/plugins.js}"></script>
+<script type="text/javascript" th:src="@{/resources/vendor/datatable/actions.js}"></script>
+
+</body>
+</html>

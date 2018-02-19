@@ -1,0 +1,11 @@
+.list-relatorio li {
+    line-height: 1.8em;
+}
+
+.show-btn-group-hover > .btn-group{
+    display: none;
+}
+
+.show-btn-group-hover:hover > .btn-group{
+    display: inline-block;
+}
