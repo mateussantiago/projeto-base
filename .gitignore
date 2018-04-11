@@ -6,3 +6,5 @@ projeto-web/target/projeto-web/WEB-INF/lib/
 *.iml
 
 projeto-web/target/
+
+\.idea/
